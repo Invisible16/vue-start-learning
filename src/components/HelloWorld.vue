@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ msg + name }}</h1>
+    <BaseModal title="Header modal" />
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -8,7 +9,7 @@
         >vue-cli documentation</a
       >.
     </p>
-    <h3>Installed CLI Plugins</h3>
+    <h3>Installe CLI Plugins</h3>
     <ul>
       <li>
         <a
@@ -107,14 +108,27 @@
         >
       </li>
     </ul>
+    <ButtonCustom />
   </div>
 </template>
 
 <script>
+import ButtonCustom from "./ButtonCustom/Button.vue";
+import BaseModal from "./BaseModal";
 export default {
   name: "HelloWorld",
+  // template:
   props: {
     msg: String,
+  },
+  data() {
+    return {
+      name: "Lea",
+    };
+  },
+  components: {
+    ButtonCustom,
+    BaseModal,
   },
 };
 </script>
